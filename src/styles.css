@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-label {
+    color: black;
+}
+.mat-select-value-text{
+    color: black;
+}
+
+.mat-select-value{
+    color: black !important;
+}
+
+.mat-form-field-type-mat-select .mat-form-field-label, .mat-select-value {
+color: black;
+}
+
+ .mat-selected .mat-active{
+    background: white !important;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background: rgba(223, 221, 221, 0.818);
+    color: black;
+}

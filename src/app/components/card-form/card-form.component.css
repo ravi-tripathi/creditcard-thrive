@@ -1,0 +1,24 @@
+.formContainer{
+    line-height: 10px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 33vw;
+    margin-left: 33vw;
+    margin-top: 100px;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mat-select-value-text{
+    color: black;
+}
+
+.mat-select-value{
+    color: black !important;
+}
+
+span{
+    color: black !important;
+}

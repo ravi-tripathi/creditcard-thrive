@@ -1,0 +1,49 @@
+<form [formGroup]="cardForm" class="formContainer" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <mat-form-field appearance="fill">
+            <mat-label>Card Number : </mat-label>
+            <input matInput formControlName="cardno" required>
+        </mat-form-field>    
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="fill">
+            <mat-label>Card Name : </mat-label>
+            <input matInput formControlName="name" required>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <!-- <mat-label>Month</mat-label> -->
+        <mat-form-field appearance="fill" class="expiryDate">
+            <mat-label>Month : </mat-label>
+            <mat-select formControlName="month" placeholder="Select Month">
+            <mat-option *ngFor="let month of months" [value]="month">
+                {{month}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <!-- <mat-label>Year</mat-label> -->
+        <mat-form-field appearance="fill" class="expiryDate">
+            <mat-label>Year : </mat-label>
+            <mat-select formControlName="year" placeholder="Select Year"  >
+                <mat-option *ngFor="let year of years" [value]="year">
+                {{year}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="fill">
+            <span>CVV : </span>
+            <input matInput formControlName="cvv">
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Submit Form</button>
+
+</form>
