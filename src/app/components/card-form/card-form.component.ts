@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
-import {getCardType, isCVVValid, } from '../../utils/form.validations'
+import {getCardType, isCVVValid, isNameValid} from '../../utils/form.validations'
 
 @Component({
   selector: 'app-card-form',
@@ -30,13 +30,17 @@ export class CardFormComponent implements OnInit {
     console.log('Form Value', this.cardForm, this.cardForm.value);
     if (this.cardForm.status !== 'INVALID' ){
       const cardType = getCardType(JSON.stringify(this.cardForm.value.cardno));
-      console.log('cardType', cardType);
-      this.dialog.open(DialogComponent, {
-        data: {
-          cardData: this.cardForm.value,
-          cardType: cardType
-        },
-      });
+      const checknameoncard = isNameValid(this.cardForm.value.name);
+      const checkCvv = isCVVValid(this.cardForm.value.cvv);
+      if (checknameoncard && checkCvv) {
+        console.log('cardType', cardType);
+        this.dialog.open(DialogComponent, {
+          data: {
+            cardData: this.cardForm.value,
+            cardType: cardType
+          },
+        });
+      }
     }
   }
 

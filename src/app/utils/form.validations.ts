@@ -10,7 +10,9 @@ export function isCVVValid(val : number): any {
 export function isNameValid(name: string){
     const exp = new RegExp('^[A-Z].*');
     if (name.length &&  name.match(exp)){
-       
+       return true;
+    }else{
+        return false;
     }
 }
 
